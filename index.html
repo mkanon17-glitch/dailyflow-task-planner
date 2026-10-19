@@ -52,7 +52,7 @@
         <div><div class="eyebrow" id="todayLabel">DAILY OVERVIEW</div><h1 id="pageTitle">আজকের কাজ</h1></div>
         <div class="top-actions">
           <select id="languageSelect" aria-label="Language"><option value="bn">বাংলা</option><option value="en">English</option></select>
-          <button class="btn primary" id="addTaskBtn">＋ <span data-i18n="newTask">নতুন কাজ</span></button>
+          <button class="btn secondary" id="manageRecurringBtn">↻ <span data-i18n="dailyRoutine">প্রতিদিনের কাজ</span></button><button class="btn primary" id="addTaskBtn">＋ <span data-i18n="newTask">নতুন কাজ</span></button>
         </div>
       </header>
 
@@ -99,6 +99,18 @@
       <div class="field"><label for="taskNotes" data-i18n="notesOptional">নোট (ঐচ্ছিক)</label><textarea id="taskNotes" rows="3" placeholder="কাজ সম্পর্কে অতিরিক্ত তথ্য…"></textarea></div>
       <div class="dialog-actions"><button type="button" class="btn danger-outline hidden" id="deleteTaskBtn" data-i18n="delete">মুছে ফেলুন</button><div class="spacer"></div><button type="button" class="btn secondary" id="cancelDialog" data-i18n="cancel">বাতিল</button><button type="submit" class="btn primary" id="saveTaskBtn" data-i18n="saveTask">কাজ সংরক্ষণ</button></div>
     </form>
+  </dialog>
+
+  <dialog id="recurringDialog" class="task-dialog">
+    <div class="dialog-head"><div><p class="eyebrow">DAILY ROUTINE</p><h2 data-i18n="dailyRoutine">প্রতিদিনের কাজ</h2></div><button type="button" class="icon-btn" id="closeRecurringDialog" aria-label="Close">×</button></div>
+    <p class="muted small" data-i18n="routineHelp">এখানে কাজ যোগ করলে প্রতিদিনের তালিকায় স্বয়ংক্রিয়ভাবে তৈরি হবে।</p>
+    <form id="recurringForm">
+      <div class="field"><label for="recurringTitle" data-i18n="taskName">কাজের নাম</label><input id="recurringTitle" required maxlength="160" placeholder="যেমন: Facebook পোস্ট তৈরি"></div>
+      <div class="form-row"><div class="field"><label for="recurringCategory" data-i18n="category">ক্যাটাগরি</label><select id="recurringCategory"><option value="Personal">Personal</option><option value="Work">Work</option><option value="Content" selected>Content</option><option value="Learning">Learning</option><option value="Family">Family</option><option value="Other">Other</option></select></div><div class="field"><label for="recurringPriority" data-i18n="priority">গুরুত্ব</label><select id="recurringPriority"><option value="high">High / বেশি</option><option value="medium" selected>Medium / মাঝারি</option><option value="low">Low / কম</option></select></div></div>
+      <div class="field"><label for="recurringNotes" data-i18n="notesOptional">নোট (ঐচ্ছিক)</label><textarea id="recurringNotes" rows="2"></textarea></div>
+      <button type="submit" class="btn primary" id="saveRecurringBtn" data-i18n="addRoutine">প্রতিদিনের তালিকায় যোগ করুন</button>
+    </form>
+    <h3 data-i18n="yourRoutine">আপনার প্রতিদিনের কাজ</h3><div id="recurringList" class="task-list"></div>
   </dialog>
   <script src="app.js"></script>
 </body>
