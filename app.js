@@ -3,8 +3,8 @@
    2) Paste your Project URL and anon/publishable key below.
    Never put a service_role key in this file.
 */
-const SUPABASE_URL = "PASTE_YOUR_SUPABASE_PROJECT_URL";
-const SUPABASE_ANON_KEY = "PASTE_YOUR_SUPABASE_ANON_OR_PUBLISHABLE_KEY";
+const SUPABASE_URL = "https://oyiniuibkrgllftpflpm.supabase.co";
+const SUPABASE_ANON_KEY = "sb_publishable_EMRPq141eXYYZE15F7ipmw_d0wf1bl8";
 const hasConfig = SUPABASE_URL.startsWith("https://") && !SUPABASE_URL.includes("PASTE_") && !SUPABASE_ANON_KEY.includes("PASTE_");
 const supabaseClient = hasConfig && window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY) : null;
 
